@@ -1,0 +1,7 @@
+vsf-shopware-indexer/node_modules/
+vsf-shopware-indexer/node_modules
+vsf-shopware-indexer/*.log
+vsf-shopware-indexer/logs/*.log
+vsf-shopware-indexer/config.js
+logs/*.log
+.idea/*

@@ -1,0 +1,38 @@
+const appRoot = require('app-root-path');
+
+module.exports = {
+  api: {
+    protocol: process.env.API_PROTOCOL || 'http',
+    host: process.env.API_HOST || 'localhost:8000',
+    token: process.env.API_TOKEN || '',
+    version: process.env.API_VERSION || 'v1',
+    prefix: process.env.API_PREFIX || 'sales-channel-api',
+    user: '',
+    password: ''
+  },
+  elasticsearch: {
+    host: 'localhost',
+    port: 9200,
+    logLevel: 'warn',
+    indexName: 'vue_storefront_catalog',
+  },
+  logger: {
+    winston: {
+      file: {
+        level: 'info',
+        filename: `${appRoot}/logs/app.log`,
+        handleExceptions: true,
+        json: true,
+        maxsize: 5242880,
+        maxFiles: 5,
+        colorize: false,
+      },
+      console: {
+        level: 'debug',
+        handleExceptions: true,
+        json: false,
+        colorize: true,
+      }
+    }
+  }
+}

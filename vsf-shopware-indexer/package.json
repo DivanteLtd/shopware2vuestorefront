@@ -1,0 +1,22 @@
+{
+  "name": "ShopwareVueStoreFront",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@gitlab.divante.pl:60022/shopware/indexer.git",
+  "author": "Maciej Kucmus <mkucmus@divante.pl>",
+  "license": "MIT",
+  "scripts": {
+    "index": "node ./cli.js reindex"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^5.6.16-rc.1",
+    "app-root-path": "^2.2.1",
+    "axios": "^0.18.0",
+    "commander": "^2.20.0",
+    "dateformat": "^3.0.3",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  }
+}
