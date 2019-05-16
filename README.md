@@ -129,6 +129,18 @@ Run the `yarn dev` command in both: `vue-storefront-api` and `vue-storefront` fo
 
 Please do [contact us](https://vuestorefront.io) in the case of any issues with the installation procedure.
 
+# More on Vue Storefront
+
+[![See how it works!](docs/.vuepress/public/Fil-Rakowski-VS-Demo-Youtube.png)](https://www.youtube.com/watch?v=L4K-mq9JoaQ)
+
+## Technical Webcast #1 - demo and the architecture
+
+[![Demo and the architecture of Vue Storefront](docs/.vuepress/public/video-webcast-1.png)](https://www.youtube.com/watch?v=sRSmEP4jva0&feature=youtu.be)
+
+# Join the community on Slack
+
+If you have any questions or ideas feel free to join our slack: https://vuestorefront.slack.com via [invitation link](https://join.slack.com/t/vuestorefront/shared_invite/enQtMzA4MTM2NTE5NjM2LTI1M2RmOWIyOTk0MzFlMDU3YzJlYzcyYzNiNjUyZWJiMTZjZjc3MjRlYmE5ZWQ1YWRhNTQyM2ZjN2ZkMzZlNTg)
+
 # Contributing
 
 We are currently in a process of building the connector. If you want to help shaping future of Vue and Shopware we'd be more than happy if you want to contribute! [Here](./CONTRIBUTING.md) you can find all the required information.
