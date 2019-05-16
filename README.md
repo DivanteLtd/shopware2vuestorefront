@@ -140,7 +140,7 @@ Please do [contact us](https://vuestorefront.io) in the case of any issues with 
 
 ## Technical Webcast #1 - demo and the architecture
 
-[![Demo and the architecture of Vue Storefront](docs/mediavideo-webcast-1.png)](https://www.youtube.com/watch?v=sRSmEP4jva0&feature=youtu.be)
+[![Demo and the architecture of Vue Storefront](docs/media/video-webcast-1.png)](https://www.youtube.com/watch?v=sRSmEP4jva0&feature=youtu.be)
 
 # Join the community on Slack
 
