@@ -1,4 +1,9 @@
-# Shopware 6 to Vue Storefront
+# Vue Storefront for Shopware 6
+<a href="https://travis-ci.org/DivanteLtd/vue-storefront"><img src="https://travis-ci.org/DivanteLtd/vue-storefront.svg?branch=master" alt="build:passed"></a>
+![version](https://img.shields.io/badge/node-v8.x-blue.svg)
+![Branch stable](https://img.shields.io/badge/stable%20branch-master-blue.svg)
+![Branch Develop](https://img.shields.io/badge/dev%20branch-develop-blue.svg)
+<a href="https://join.slack.com/t/vuestorefront/shared_invite/enQtMzA4MTM2NTE5NjM2LTI1M2RmOWIyOTk0MzFlMDU3YzJlYzcyYzNiNjUyZWJiMTZjZjc3MjRlYmE5ZWQ1YWRhNTQyM2ZjN2ZkMzZlNTg">![Branch Develop](https://img.shields.io/badge/community%20chat-slack-FF1493.svg)</a>
 
 Vue Storefront is a extremly fast and customizable frontend framework for eCommerce. Based on Vue.js, leverages the Headless architecture approach. With Vue Storefront You could build the stunning UI interfaces, increase the Conversion Rates, improve the UX. **Now it's available for Shopware 6!**. 
 
@@ -131,11 +136,11 @@ Please do [contact us](https://vuestorefront.io) in the case of any issues with 
 
 # More on Vue Storefront
 
-[![See how it works!](docs/.vuepress/public/Fil-Rakowski-VS-Demo-Youtube.png)](https://www.youtube.com/watch?v=L4K-mq9JoaQ)
+[![See how it works!](docs/media/Fil-Rakowski-VS-Demo-Youtube.png)](https://www.youtube.com/watch?v=L4K-mq9JoaQ)
 
 ## Technical Webcast #1 - demo and the architecture
 
-[![Demo and the architecture of Vue Storefront](docs/.vuepress/public/video-webcast-1.png)](https://www.youtube.com/watch?v=sRSmEP4jva0&feature=youtu.be)
+[![Demo and the architecture of Vue Storefront](docs/mediavideo-webcast-1.png)](https://www.youtube.com/watch?v=sRSmEP4jva0&feature=youtu.be)
 
 # Join the community on Slack
 
