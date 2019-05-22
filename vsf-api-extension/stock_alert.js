@@ -1,6 +1,6 @@
 import AbstractStockAlertProxy from '../abstract/stock_alert';
 import { multiStoreConfig } from './util';
-import { ShopwareClient } from './module/index';
+import { ShopwareClient } from './shopware-api-client';
 
 class StockAlertProxy extends AbstractStockAlertProxy {
   constructor (config, req){

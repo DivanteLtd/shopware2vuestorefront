@@ -1,6 +1,6 @@
 import AbstractContactProxy from '../abstract/contact';
 import { multiStoreConfig } from './util';
-import { ShopwareClient } from './module/index';
+import { ShopwareClient } from './shopware-api-client';
 
 class ContactProxy extends AbstractContactProxy {
   constructor (config, req){

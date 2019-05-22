@@ -1,6 +1,6 @@
 import AbstractOrderProxy from '../abstract/order'
 import { multiStoreConfig } from './util'
-import { ShopwareClient } from './module/index';
+import { ShopwareClient } from './shopware-api-client';
 
 class OrderProxy extends AbstractOrderProxy {
     constructor (config, req){

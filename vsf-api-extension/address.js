@@ -1,11 +1,11 @@
 import AbstractAddressProxy from '../abstract/address'
 import {multiStoreConfig} from "./util";
-import {Magento1Client} from "./module";
+import {ShopwareClient} from "./shopware-api-client";
 
 class AddressProxy extends AbstractAddressProxy {
   constructor (config, req){
     super(config, req)
-    this.api = Magento1Client(multiStoreConfig(config.magento1.api, req));
+    this.api = ShopwareClient(multiStoreConfig(config.magento1.api, req));
   }
   list (customerToken) {
     return this.api.address.list(customerToken)

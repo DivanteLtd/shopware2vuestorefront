@@ -1,6 +1,6 @@
 import AbstractWishlistProxy from '../abstract/wishlist';
 import { multiStoreConfig } from './util';
-import { ShopwareClient } from './module/index';
+import { ShopwareClient } from './shopware-api-client';
 
 class WishlistProxy extends AbstractWishlistProxy {
   constructor (config, req){

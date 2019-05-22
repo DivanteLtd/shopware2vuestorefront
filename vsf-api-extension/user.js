@@ -1,6 +1,6 @@
 import AbstractUserProxy from '../abstract/user'
 import { multiStoreConfig } from './util'
-import {ShopwareClient} from "./module";
+import {ShopwareClient} from "./shopware-api-client";
 
 class UserProxy extends AbstractUserProxy {
   constructor (config, req){

@@ -1,6 +1,6 @@
 import AbstractCartProxy from '../abstract/cart';
 import { multiStoreConfig } from './util';
-import { ShopwareClient } from './module/index';
+import { ShopwareClient } from './shopware-api-client';
 
 class CartProxy extends AbstractCartProxy {
   constructor (config, req){
