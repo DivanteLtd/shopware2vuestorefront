@@ -3,6 +3,7 @@ const { host, port, indexName } = require('../../../config').elasticsearch
 const client = new Client({
   node: `http://${host}:${port}`,
 })
+const { timeout } = require('./helper')
 
 const insertDocument = (type, document) => client.create({
   index: indexName,
@@ -23,18 +24,16 @@ const updateDocument = (type, document) => client.update({
 const insertCategory = async category => await insertDocument('category', category)
 const insertCategories = async categories => {
   for (const category of categories) {
+    if (typeof category.id == 'undefined') {
+      continue;
+    }
     if (!category) {
-      //console.log(category)
       continue;
     }
     try {
       await insertCategory(category)
       console.log(`category ${category.name} inserted.`)
     } catch (e) {
-      //console.log(e)
-      if (!e.meta) {
-        //console.log(category)
-      }
       if (e.meta.statusCode === 409) { // document already exists; force update.
         await updateDocument('category', category)
         console.log(`updated category: ${category.name}`)
@@ -46,15 +45,17 @@ const insertCategories = async categories => {
 const insertProduct = async product => await insertDocument('product', product)
 const insertProducts = async products => {
   for (const product of products) {
+    if (product && typeof product.id == 'undefined') {
+      continue;
+    }
     try {
-      //console.log(product)
+      await timeout(100)
       await insertProduct(product)
       console.log(`product ${product.name} inserted.`)
     } catch (e) {
-      //console.log(e.body.error)
-      if (e.meta.statusCode === 409) { // document already exists; force update.
+      if (e.meta && e.meta.statusCode === 409) { // document already exists; force update.
         await updateDocument('product', product)
-        console.log(`updated product: ${product.name}`)
+        console.log(`updated product: ${product.sku}`)
       }
     }
   }
@@ -63,12 +64,13 @@ const insertProducts = async products => {
 const insertAttribute = async attribute => await insertDocument('attribute', attribute)
 const insertAttributes = async attributes  => {
   for (const attribute of attributes) {
+    if (typeof attribute.id == 'undefined') {
+      continue;
+    }
     try {
-      //console.log(attribute)
       await insertAttribute(attribute)
       console.log(`attribute ${attribute.name} inserted.`)
     } catch (e) {
-      //console.log(e.body.error)
       if (e.meta.statusCode === 409) { // document already exists; force update.
         await updateDocument('attribute', attribute)
         console.log(`updated attribute: ${attribute.name}`)

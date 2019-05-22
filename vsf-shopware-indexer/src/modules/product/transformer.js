@@ -1,13 +1,16 @@
 const { get } = require('../common/apiConnector')
-const { getAdmin } = require('../common/apiConnectorAdmin')
+const { getAdmin, deleteAdmin, patchAdmin } = require('../common/apiConnectorAdmin')
+const { dateFromObjectId, timeout } = require('../common/helper')
 const cache = {
-  'media': {}
+  'media': {},
+  'category': {
+  }
 }
 
 const extractMedia = async productId => {
   try {
-    const result = await get(`product/${productId}`)
-    //console.log(result.data.data.media)
+    await timeout(200)
+     const result = await getAdmin(`product/${productId}`, true)
     let mediaArray = result && result.data.data.media && result.data.data.media.map(({position, media: {url}}) => ({
       image: url,
       pos: position,
@@ -15,13 +18,11 @@ const extractMedia = async productId => {
       lab: ""
     }))
 
-    if (false || !mediaArray || mediaArray.length == 0) {
-      console.log('tuuuuuuu')
-      const apiresponse = await getAdmin(`product/${productId}/media`)
-      console.log('tu 2')
-    //console.log(apiresponse.data.data)
-    console.log('------------------========================')
-      mediaArray = apiresponse.data.data && apiresponse.data.data.map(async ({position, media}) => ({
+    if (!mediaArray || mediaArray.length == 0) {
+      await timeout(100)
+    const apiresponse = await getAdmin(`product/${productId}/media`)
+
+     mediaArray = apiresponse.data.data && apiresponse.data.data.map(({position, media}) => ({
         image: media.url,
         pos: position,
         typ: 'image',
@@ -29,41 +30,94 @@ const extractMedia = async productId => {
       }))
     }
 
-    return Array.isArray(mediaArray) ? Promise.all(mediaArray) : []
+    const media = Array.isArray(mediaArray) ? mediaArray : []
+    return media
+  } catch (e) {
+    
+    console.log(`get media exception`)
+    console.log(e)
+
+  return []
+  }
+}
+
+const extractCategoryName = async categoryId => {
+  try {
+    console.log('extracting category name')
+    const result = await get(`category/${categoryId}`)
+    console.log(`category/${categoryId}`)
+    return result.data.data.name
+  } catch (e) {
+    console.log(`category name.`)
+  }
+  
+}
+
+const extractIntId = async categoryId => {
+  try {
+    console.log('getting category id')
+    const result = await get(`category/${categoryId}`)
+    return result.data.data.autoIncrement
   } catch (e) {
     console.log(e)
+  }
+
+  return 0
+  
+}
+const extractCategories = async categoryTree => {
+  try {
+    const categories = categoryTree ? categoryTree
+      .map(async categoryId => {
+        await timeout(100)
+        if (cache['category'][categoryId]) {
+          console.log(`using cached category ${categoryId}`)
+          return cache['category'][categoryId]
+        }
+        const responseData = await patchAdmin(`category/${categoryId}?_response=true`, {})
+        const { autoIncrement, name } = responseData.data.data
+        cache['category'][categoryId] = {
+          "category_id": autoIncrement,
+          "name": name 
+        }
+        return {
+          "category_id": autoIncrement,
+          "name": name 
+        }
+    }) 
+    : []
+      
+    return Promise.all(categories)
+  } catch (e) {
+    console.log('error extract categories')
   }
 
   return []
   
 }
-
-const extractCategoryName = async categoryId => {
-  const result = await get(`category/${categoryId}`)
-  return result.data.data.name
-}
-
-const extractIntId = async categoryId => {
-  const result = await get(`category/${categoryId}`)
-  return result.data.data.autoIncrement
-}
-const extractCategories = async productId => {
-  const result = await get(`product/${productId}`)
-  const categories = result.data.data.categoryTree ? result.data.data.categoryTree.map(async category => ({"category_id": await extractIntId(category),
-  "name": await extractCategoryName(category) })) : []
-  return Promise.all(categories)
-}
-const appendAttributes = async (product, propertyIds) => {
-
-  if (propertyIds.id == "58fd532dee7a4e11a04c7fa4acfa3a76") {
-    const propertyId = propertyIds.propertyIds[0]
-    const productProperty = await getAdmin(`product-property-option/${propertyId}`)
-    console.log(propertyIds.propertyIds)
+const extractAttributes = async (product, propertyIds) => {
+  let attributes = {}
+  for (const propertyId of propertyIds) {
+    const optionDetailsResponse = await getAdmin(`property-group-option/${propertyId}`)
+    const optionGroupId = optionDetailsResponse.data.data.groupId
+    const optionGroupDetailsResponse = await getAdmin(`property-group/${optionGroupId}`)
+    const optionGroupCode = optionGroupDetailsResponse.data.data.name
+    attributes[optionGroupCode] = dateFromObjectId(propertyId)
   }
-
-  return product
+  return attributes
 }
 const template = require('./template')
-const transformedProduct = async (product) => appendAttributes(template(product, await extractCategories(product.id), await extractMedia(product.id)), product)
+const transformedProduct = async (product) => {
+  await timeout(100)
+  try {
+    let attributes = extractAttributes(product, product.propertyIds)
+    let newProduct = await template(product, await extractCategories(product.categoryTree), await extractMedia(product.id))
+    return newProduct
+    const [obj1, obj2] = await Promise.all([attributes, newProduct])
+    return  Object.assign(obj1, obj2)
+  } catch (e) {
+    console.log(e)
+  }
+}
 
 module.exports = transformedProduct

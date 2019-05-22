@@ -1,7 +1,7 @@
 const request = require('axios')
 const { protocol, host, version, prefix, token, user, password } = require('../../../config').api
-let cachedToken = false
 
+let cachedToken = false
 const getToken = async (refresh = false) => {
   if (cachedToken && !refresh) {
     return cachedToken
@@ -15,21 +15,20 @@ const getToken = async (refresh = false) => {
     password: password
   })
   cachedToken = response.data.access_token
-  return cachedToken
+  return response.data.access_token
 }
 
 const getAuthHeaders = async (refreshToken = false) => {
   const token = await getToken(refreshToken)
   return ({'headers': {'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json'}})
 }
-
 const getRequestUri = () => `${protocol}://${host}/api/${version}`
 const getUrl = (endpoint) => `${getRequestUri()}/${endpoint}`
 
 const getAdmin = async (endpoint, refreshToken = false) => {
   return request.get(getUrl(endpoint), await getAuthHeaders(refreshToken))
 }
-const postAdmin = async (endpoint, data, refreshToken = false) => request.post(getUrl(endpoint), data, await getAuthHeaders(refreshToken))
+const postAdmin = async (endpoint, data) => request.post(getUrl(endpoint), data, await getAuthHeaders())
 const patchAdmin = async (endpoint, data, refreshToken = false) => request.patch(getUrl(endpoint), data, await getAuthHeaders(refreshToken))
 const deleteAdmin = async (endpoint, refreshToken = false) => request.delete(getUrl(endpoint), await getAuthHeaders(refreshToken))
 

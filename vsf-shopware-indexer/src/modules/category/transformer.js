@@ -1,4 +1,3 @@
-
 const { get } = require('../common/apiConnector')
 const transform = require('./template')
 

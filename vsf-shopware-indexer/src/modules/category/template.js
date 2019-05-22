@@ -1,4 +1,5 @@
 const { get } = require('../common/apiConnector')
+const slugger = require('../common/slugger')
 
 const extractIntId = async categoryId => {
   try {
@@ -19,7 +20,7 @@ const transform = async ({ id, parentId, name, createdAt, updatedAt, level, posi
     "parent_id": parentIdInt ? parentIdInt : 0,
     "created_at": "2013-01-14 10:12:53",
     "updated_at": "2013-01-14 10:12:53",
-    "position": position,
+    "position": 1,
     "level": level+1,
     "children_count": childrenCount ? childrenCount : 1,
     "available_sort_by": null,
@@ -31,8 +32,8 @@ const transform = async ({ id, parentId, name, createdAt, updatedAt, level, posi
     "children_count": subcategories.length,
     "is_anchor": true,
     "path": !parentId ? `1/${autoIncrement}` : `1/${parentIdInt}/${autoIncrement}`,
-    "url_key": `${id}`,
-    "slug": `${id}`,
+    "url_key": slugger(name),
+    "slug": slugger(name),
     "url_path":  !parentId ? `1/${autoIncrement}` : `1/${parentIdInt}/${autoIncrement}`,
     "is_active": true,
   }

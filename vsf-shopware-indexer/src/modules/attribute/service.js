@@ -7,7 +7,6 @@ const getAttribute = attributeId => {}
 const getAllAttributes = async () => {
   try {
     const response = await getAdmin('property-group?include=options')
-    //console.log(response.data.data)
     return response.data.data
   } catch (e) {
     console.log(e)
