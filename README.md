@@ -119,9 +119,9 @@ Now, please do configure the `vsf-shopware-indexer` by copying the `vsf-shopware
 8. Now You need to index Your local ElasticSearch index with the prodcuts from Shopware instance by running the:
 
 ```sh
-node vsf-shopware-indexer/cli.js attribute
-node vsf-shopware-indexer/cli.js category
-node vsf-shopware-indexer/cli.js product
+node vsf-shopware-indexer/cli.js reindex attribute
+node vsf-shopware-indexer/cli.js reindex category
+node vsf-shopware-indexer/cli.js reindex product
 ```
 
 Then make sure You applied the proper data schema on Your brand-new Elastic index by running the:
