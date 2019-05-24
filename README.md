@@ -15,7 +15,7 @@ Made with ❤️ by [Vue Storefront](https://github.com/DivanteLtd/vue-storefron
 
 # What makes it unique?
 
-This projects bring You the [Shopware 6](https://shopware.com) support as a backend platform for [Vue Storefront - first Progressive Web App for e-Commerce](https://vuestorefront.io).
+This projects bring You the [Shopware 6](https://www.shopware.com) support as a backend platform for [Vue Storefront - first Progressive Web App for e-Commerce](https://vuestorefront.io).
 
 Vue Storefront is a standalone PWA storefront for your eCommerce. It leverages the **Headless Architecture** and lets You make the most of the modern Shopware 6 Storefront API. 
 
