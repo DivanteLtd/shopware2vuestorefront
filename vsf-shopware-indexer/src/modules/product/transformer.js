@@ -96,6 +96,9 @@ const extractCategories = async categoryTree => {
   
 }
 const extractAttributes = async (product, propertyIds) => {
+  if (!propertyIds) {
+    return {}
+  }
   let attributes = {}
   for (const propertyId of propertyIds) {
     const optionDetailsResponse = await getAdmin(`property-group-option/${propertyId}`)
@@ -110,11 +113,9 @@ const template = require('./template')
 const transformedProduct = async (product) => {
   await timeout(100)
   try {
-    let attributes = extractAttributes(product, product.propertyIds)
+    let attributes = await extractAttributes(product, product.propertyIds)
     let newProduct = await template(product, await extractCategories(product.categoryTree), await extractMedia(product.id))
-    return newProduct
-    const [obj1, obj2] = await Promise.all([attributes, newProduct])
-    return  Object.assign(obj1, obj2)
+    return  Object.assign(newProduct, attributes)
   } catch (e) {
     console.log(e)
   }

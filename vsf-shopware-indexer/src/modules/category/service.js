@@ -7,7 +7,6 @@ const getCategory = categoryId => {}
 const getAllCategories = async () => {
   try {
     const response = await apiConnector.get('category?limit=50')
-    //console.log(response.data.data)
     return response.data.data
   } catch (e) {
     console.log(e)
