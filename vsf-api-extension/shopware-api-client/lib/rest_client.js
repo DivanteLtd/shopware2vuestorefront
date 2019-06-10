@@ -134,6 +134,15 @@ module.exports.RestClient = function (options) {
     return apiCall(request_data, request_token);
   }
 
+  instance.patch = function (resourceUrl, data, request_token = '') {
+    const request_data = {
+      url: createUrl(resourceUrl),
+      method: 'PATCH',
+      body: data
+    };
+    return apiCall(request_data, request_token);
+  }
+
   instance.delete = function (resourceUrl, request_token = '') {
     const request_data = {
       url: createUrl(resourceUrl),

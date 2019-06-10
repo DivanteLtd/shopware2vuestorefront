@@ -23,11 +23,18 @@ module.exports = function (restClient) {
   }
   
   module.create = async (orderData) => {
-    url += 'guest-order';
-    const { addressInformation: { shippingAddress, billingAddress } }  = orderData
+    // decide whether it's guest or not.
+    // TODO: validate user_id
+    if (orderData.user_id) {
+      url += 'order'
+    } else {
+      url += 'guest-order';
+    }
 
+    const { addressInformation: { shippingAddress, billingAddress } } = orderData
+        // TODO: discover salutation from customer's name
         const salutationResponse = await search('salutation', { identifier: 'displayName', value: 'Mr.' }, orderData.cart_id)
-        const countryResponse = await search('country', { identifier: 'iso', value: 'DE' }, orderData.cart_id)
+        const countryResponse = await search('country', { identifier: 'iso', value: billingAddress.country_id }, orderData.cart_id)
         const salutationId = salutationResponse.data.shift().id
         const countryId = countryResponse.data.shift().id
        
@@ -46,14 +53,13 @@ module.exports = function (restClient) {
             }
           }
 
-        return restClient.post(url, customerInfo, orderData.cart_id).then((data)=> {        
+        return restClient.post(url, customerInfo, orderData.cart_id).then((data)=> {
           return getResponse({
             code: 200,
             result: 'OK',
           });
           
-        })
-    
+        }).catch(e => console.log('error: ',e))
   }
 
   return module;
