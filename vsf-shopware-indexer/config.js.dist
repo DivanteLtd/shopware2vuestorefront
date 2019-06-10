@@ -1,12 +1,16 @@
 module.exports = {
+  map: {
+    attribute: {
+        color: '<COLOR ATTRIBUTE ID TAKEN FROM ElasticSearch after indexation>',
+        size: '<SIZE ATTRIBUTE ID TAKEN FROM ElasticSearch after indexation>'
+    }
+  },
   api: {
     protocol: '',
     host: '',
     token: '',
     version: 'v1',
-    prefix: 'storefront-api',
-    user: 'admin',
-    password: 'shopware'
+    prefix: 'storefront-api'
   },
   elasticsearch: {
     host: 'localhost',

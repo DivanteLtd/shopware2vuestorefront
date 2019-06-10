@@ -57,6 +57,10 @@ const insertProducts = async products => {
         await updateDocument('product', product)
         console.log(`updated product: ${product.sku}`)
       }
+
+      if (e.meta && e.meta.statusCode === 400) {
+          console.log(e.meta.body.error)
+      }
     }
   }
 }

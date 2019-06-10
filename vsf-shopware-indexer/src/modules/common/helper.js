@@ -3,9 +3,10 @@ const dateFromObjectId = function (objectId) {
   const day = date.getDay()
   const hour = date.getHours()
   const minutes = date.getMinutes()
+  const seconds = date.getSeconds()
   const miliseconds = date.getMilliseconds()
 
-	return hour+minutes+miliseconds+day
+	return hour+minutes*seconds
 }
 
 const timeout = ms => new Promise(resolve => setTimeout(resolve, ms))

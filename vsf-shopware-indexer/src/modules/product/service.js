@@ -3,9 +3,19 @@ const apiConnector = require('../common/apiConnector')
 const { insertProducts } = require('../common/elasticConnector')
 const logger = require('../common/logger')
 
-const getAllProducts = async () => {
+const getAllProducts = async (page, size) => {
   try {
-    const response = await apiConnector.get('product?filter[product.active]=1')
+    // it gets only the parent products. If configurable options exist - extract them as a child items.
+    // TODO: manage case with simple products only
+    const response = await apiConnector.post('product', {
+      "filter": 
+      {
+        "product.parentId": null
+      },
+      "limit": size,
+      "page": page
+      
+    })
     return response.data.data
   } catch (e) {
     console.log(e)
@@ -17,7 +27,7 @@ const reindex = async (page, size) => {
   logger.info(`products are being rebuilt...`)
   
   try {
-    const products = await getAllProducts()
+    const products = await getAllProducts(page, size)
     if (!products) {
       console.log('nothing to do.')
     }

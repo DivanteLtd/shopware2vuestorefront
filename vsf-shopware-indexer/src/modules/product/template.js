@@ -1,20 +1,16 @@
 const dateformat = require('dateformat')
 const { get } = require('../common/apiConnector')
 
-const transform = async ({ id, autoIncrement, description, descriptionLong, price, name, ean, cover, stock, datasheet, createdAt, updatedAt, attributeIds }, categories, gallery) => ({
+const configurable = async ({ id, autoIncrement, description, descriptionLong, price, name, ean, cover, stock, datasheet, createdAt, updatedAt, attributeIds }, categories, gallery) => ({
   "entity_type_id": 4,
   "attribute_set_id": 11,
-  "type_id": "simple",
+  "type_id": "configurable",
   "sku": ean ? ean : id,
-  "has_options": 0,
-  "required_options": 0,
+  "has_options": 1,
+  "required_options": 1,
   "created_at": dateformat(createdAt, 'yyyy-mm-dd H:mm:s'),
   "updated_at": dateformat(createdAt, 'yyyy-mm-dd H:mm:s'),
-  "color": null,
-  "size": null,
-  "jewelry_type": null,
   "status": 1,
-  "accessories_size": null,
   "visibility": 4,
   "tax_class_id": 2,
   "is_recurring": false,
@@ -62,9 +58,89 @@ const transform = async ({ id, autoIncrement, description, descriptionLong, pric
   "id": autoIncrement,
   "category": categories,
   "category_ids": categories.map(category => category.category_id),
-  "stock":{
-      "is_in_stock": !!stock
-  }
+  "stock": {
+    "item_id": autoIncrement,
+    "product_id": autoIncrement,
+    "stock_id": 1,
+    "qty": 10,
+    "is_in_stock": true,
+    "is_qty_decimal": false,
+    "show_default_notification_message": false,
+    "use_config_min_qty": true,
+    "min_qty": 0,
+    "use_config_min_sale_qty": 1,
+    "min_sale_qty": 1,
+    "use_config_max_sale_qty": true,
+    "max_sale_qty": 10000,
+    "use_config_backorders": true,
+    "backorders": 0,
+    "use_config_notify_stock_qty": true,
+    "notify_stock_qty": 1,
+    "use_config_qty_increments": true,
+    "qty_increments": 0,
+    "use_config_enable_qty_inc": true,
+    "enable_qty_increments": false,
+    "use_config_manage_stock": true,
+    "manage_stock": true,
+    "low_stock_date": null,
+    "is_decimal_divided": false,
+    "stock_status_changed_auto": 0
+},
+  
 })
 
-module.exports = transform
+
+const simple = async ({ id, autoIncrement, description, descriptionLong, price, name, ean, cover, stock, datasheet, createdAt, updatedAt, attributeIds }) => ({
+  "id": autoIncrement,
+  "sku": id,
+  "name": name ? name : `${autoIncrement}`,
+  "attribute_set_id": 4,
+  "price": price,
+  "status": 1,
+  "visibility": 1,
+  "type_id": "simple",
+  "created_at": dateformat(createdAt, 'yyyy-mm-dd H:mm:s'),
+  "updated_at": dateformat(createdAt, 'yyyy-mm-dd H:mm:s'),
+  "weight": 1,
+  "product_links": [],
+  "tier_prices": [],
+  "custom_attributes": null,
+  "price": price.gross,
+  "final_price": price.gross,
+  "price_incl_tax": price.gross,
+  "final_price_incl_tax": price.gross,
+  "description": " ",
+  "special_from_date": null,
+  "image": "",
+  "small_image": "",
+  "thumbnail": "",
+  "color": null,
+  "size": null,
+  "news_from_date": null,
+  "custom_design_from":null,
+  "category_ids": [],
+  "options_container": "container2",
+  "has_options": "0",
+  "url_key": id,
+  "tax_class_id": "2",
+  "zoom_image": "",
+  "links": {},
+  "media_gallery": [],
+  "category": [],
+  "priceTax": 0,
+  "priceInclTax": price.gross,
+  "specialPriceTax": 0,
+  "specialPriceInclTax": 0,
+  "stock": {
+    "item_id": autoIncrement,
+    "product_id": autoIncrement,
+    "stock_id": 1,
+    "qty": 10,
+    "is_in_stock": true
+  },
+})
+
+module.exports = {
+  configurable,
+  simple
+}
