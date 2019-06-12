@@ -114,6 +114,8 @@ In the end - set the `Shopware 6` API credentials in the `vue-storefront-api/loc
 
 The second part of the integration is product's catalog which should be indexed into ElasticSearch index - which is the local database Vue Storefront is using in order to display the product catalog.
 
+Follow the instructions located in vsf-shopware-indexer/README.md and then move to the next steps:
+
 Now, please do configure the `vsf-shopware-indexer` by copying the `vsf-shopware-indexer/config.js.dist` to `vsf-shopware-indexer/config.js` and setting the proper API credentials.
 9. Install the dependencies: `cd vsf-shopware-indexer/; yarn install`
 8. Now You need to index Your local ElasticSearch index with the prodcuts from Shopware instance by running the:
@@ -121,6 +123,10 @@ Now, please do configure the `vsf-shopware-indexer` by copying the `vsf-shopware
 ```sh
 node vsf-shopware-indexer/cli.js reindex attribute
 node vsf-shopware-indexer/cli.js reindex category
+```
+Take a look for the attributes' IDs (for instance: color and size), and put them into `vsf-shopware-indexer/config.js` in the map section, adn then: 
+
+```sh
 node vsf-shopware-indexer/cli.js reindex product
 ```
 
