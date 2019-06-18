@@ -106,8 +106,8 @@ mkdir vue-storefront-api/src/platform/shopware
 cp vsf-api-extension/* vue-storefront-api/src/platform/shopware/
 ```
 
-Change the `vue-storefront-api/local.json` setting the `platform` to `shopware`.
-In the end - set the `Shopware 6` API credentials in the `vue-storefront-api/local.json`.
+Change the `vue-storefront-api/config/local.json` setting the `platform` to `shopware`.
+In the end - set the `Shopware 6` API credentials in the `vue-storefront-api/config/local.json`.
 
 
 ### Second - Configure indexer and index the products, categories and other static elements
