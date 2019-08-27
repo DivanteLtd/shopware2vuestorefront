@@ -118,7 +118,7 @@ Follow the instructions located in vsf-shopware-indexer/README.md and then move 
 
 Now, please do configure the `vsf-shopware-indexer` by copying the `vsf-shopware-indexer/config.js.dist` to `vsf-shopware-indexer/config.js` and setting the proper API credentials.
 9. Install the dependencies: `cd vsf-shopware-indexer/; yarn install`
-8. Now You need to index Your local ElasticSearch index with the prodcuts from Shopware instance by running the:
+8. Now You need to index Your local ElasticSearch index with the products from Shopware instance by running the:
 
 ```sh
 node vsf-shopware-indexer/cli.js reindex attribute
