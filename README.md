@@ -109,6 +109,25 @@ cp vsf-api-extension/* vue-storefront-api/src/platform/shopware/
 Change the `vue-storefront-api/config/local.json` setting the `platform` to `shopware`.
 In the end - set the `Shopware 6` API credentials in the `vue-storefront-api/config/local.json`.
 
+Example shopware credentials inside `vue-storefront-api/config/local.json`
+```json
+...
+"shopware": {
+     "imgUrl": "",
+     "assetPath":"",
+     "magentoUserName": "",
+     "magentoUserPassword": "",
+     "httpUserName": "",
+     "httpUserPassword": "",
+     "api": {
+         "url": "https://yourshop.biz/api",
+         "accessToken": "SWxxxxxxxxxxxxxG"
+     },  
+     "url":"https://yourshop.biz"
+}
+...
+```
+
 
 ### Second - Configure indexer and index the products, categories and other static elements
 
