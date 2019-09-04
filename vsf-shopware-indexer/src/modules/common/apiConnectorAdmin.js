@@ -6,14 +6,27 @@ const getToken = async (refresh = false) => {
   if (cachedToken && !refresh) {
     return cachedToken
   }
+  
+  let authObject = {}
 
-  const response = await request.post(`${protocol}://${host}/api/oauth/token`, {
-    client_id: "administration",
-    grant_type: "password",
-    scopes: "write",
-    username: user,
-    password: password
-  })
+  //only write scope will be sufficent
+  authObject.scopes = "write"
+
+  //use client_credentials grant when explizit set inside the api credentials else password is used
+  if(grant_type && grant_type == "client_credentials") {
+    authObject.grant_type = grant_type 
+    authObject.client_id = client_id
+    authObject.client_secret = client_secret
+  }else {
+    authObject.client_id = "administration"
+    authObject.grant_type = "password"
+    authObject.username = user
+    authObject.password = password
+  }
+  
+
+  const response = await request.post(`${protocol}://${host}/api/oauth/token`, authObject)
+
   cachedToken = response.data.access_token
   return response.data.access_token
 }

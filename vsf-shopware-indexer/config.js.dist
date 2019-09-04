@@ -9,6 +9,9 @@ module.exports = {
     protocol: '',
     host: '',
     token: '',
+    client_id:'',
+    client_secret:'',
+    grant_type:'',
     version: 'v1',
     prefix: 'storefront-api'
   },
