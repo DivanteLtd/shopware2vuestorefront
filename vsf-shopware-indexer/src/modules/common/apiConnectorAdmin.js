@@ -1,5 +1,5 @@
 const request = require('axios')
-const { protocol, host, version, prefix, token, user, password } = require('../../../config').api
+const { protocol, host, grand_type, version, prefix, token, user, password } = require('../../../config').api
 
 let cachedToken = false
 const getToken = async (refresh = false) => {
