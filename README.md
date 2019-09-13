@@ -173,4 +173,4 @@ If you have any questions or ideas feel free to join our slack: https://vuestore
 
 # Contributing
 
-We are currently in a process of building the connector. If you want to help shaping future of Vue and Shopware we'd be more than happy if you want to contribute! [Here](./CONTRIBUTING.md) you can find all the required information.
+If you want to help shaping future of Vue and Shopware we'd be more than happy if you want to contribute! [Here](./CONTRIBUTING.md) you can find all the required information.
