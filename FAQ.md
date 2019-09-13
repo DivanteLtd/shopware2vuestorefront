@@ -12,7 +12,10 @@ We're now taking a huge step from the current **`shopware2vuestorefront` - Gener
 
 ### Does it makes sense for this integration to exist along `shopware-pwa`?
 
-Sure! We're looking for active contributors and maintainers as we still see a value in this integration and it might be usefull even along with `shopware-pwa` project after it will be released. Shopware PWA will be dedicated to the client's / developers familiar with Shopware. In case somebody is working on Vue Storefront but different platform, having this `shopware2vuestorefront` integration can be really cool. By having it they will be able to work on the exactly same data formats with any given platform - being ready to build shops on client's platform of choice by single team. This is exactly the way other integrations have been done - including [spree2vuestorefront](https://github.com/spark-solutions/spree2vuestorefront).
+Sure! We're looking for active contributors and maintainers as we still see a value in this integration and it might be usefull even along with `shopware-pwa` project after it will be released. Shopware PWA will be dedicated to the client's / developers familiar with Shopware. In case somebody is working on Vue Storefront but different platform, having this `shopware2vuestorefront` integration can be really cool. 
+
+By having it they will be able to work on the exactly same data formats with any given platform - being ready to build shops on client's platform of choice by single team. This is exactly the way other integrations have been done - including [spree2vuestorefront](https://github.com/spark-solutions/spree2vuestorefront).
+
 Vue Storefront 1.0 architecture won't let us fully integrate - therefore this leapfrog is a required development step. There will be no easy way to migrate from `shopware2vuestorefront` to `shopware-pwa` as the data formats will change.
 
 ### Can I still use `shopware2vuestorefront` (https://github.com/DivanteLtd/shopware2vuestorefront) for my commercial project?
