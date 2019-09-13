@@ -5,6 +5,8 @@
 ![Branch Develop](https://img.shields.io/badge/dev%20branch-develop-blue.svg)
 <a href="https://join.slack.com/t/vuestorefront/shared_invite/enQtMzA4MTM2NTE5NjM2LTI1M2RmOWIyOTk0MzFlMDU3YzJlYzcyYzNiNjUyZWJiMTZjZjc3MjRlYmE5ZWQ1YWRhNTQyM2ZjN2ZkMzZlNTg">![Branch Develop](https://img.shields.io/badge/community%20chat-slack-FF1493.svg)</a>
 
+**This project is on the early stages of development. However it's probably OK for some limited production use. Expect some features that still requires development/bug fixing.** See the Roadmap section.
+
 Vue Storefront is a extremly fast and customizable frontend framework for eCommerce. Based on Vue.js, leverages the Headless architecture approach. With Vue Storefront You could build the stunning UI interfaces, increase the Conversion Rates, improve the UX. **Now it's available for Shopware 6!**. 
 
 **Make the eCommerce development Fun Again**. It's easy to do with Shopware 6 + Vue Storefront :-)
@@ -35,17 +37,23 @@ Vue Storefront is a standalone PWA storefront for your eCommerce. It leverages t
 
 ![](docs/media/shopware-headless-api.png)
 
-**This project is on the early stages of development. However it's probably OK for some limited production use :-) Expect some features that still requires development/bug fixing**
+This integration **is not finished** and it's **not supporting all Shopware6 features**. See the Roadmap section below.
 
-We do support most of the B2C features of Shopware 6 including:
-
-Our To-Do list includes:
+The To-Do list includes:
 - Add support for configurable products (#4)
 - Add the on-demand indexeing capabilities (#5)
 - Add the order History support for the user account (#6)
 - Add the support for online payment methods (#7)
 - Add the CMS integration (#8)
 - ...
+
+## Roadmap
+
+Based on the success of `shopware2vuestorefront` integration Shopware and Divante are working together on the next version of enhanced, native and dedicated PWA for Shopware. It will be Open Source (MIT) and will be released in **Q2 2020**.
+
+This project is no longer actively supported by Vue Storefront. It **will remain available open source** for the foreseeable future however we recommend using the official Shopware PWA, powered by Vue Storefront, which is currently being build. More information can be found on [FAQ](FAQ.md).
+
+## Contributors
 
 **We are looking for contributors and agencies willing to join us and build the best Frontend Experience for Shopware!**
 
