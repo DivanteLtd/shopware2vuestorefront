@@ -5,7 +5,7 @@
 ![Branch Develop](https://img.shields.io/badge/dev%20branch-develop-blue.svg)
 <a href="https://join.slack.com/t/vuestorefront/shared_invite/enQtMzA4MTM2NTE5NjM2LTI1M2RmOWIyOTk0MzFlMDU3YzJlYzcyYzNiNjUyZWJiMTZjZjc3MjRlYmE5ZWQ1YWRhNTQyM2ZjN2ZkMzZlNTg">![Branch Develop](https://img.shields.io/badge/community%20chat-slack-FF1493.svg)</a>
 
-**This project is on the early stages of development. However it's probably OK for some limited production use. Expect some features that still requires development/bug fixing.** See the Roadmap section.
+**This project is on the early stages of development. However it's probably OK for some limited production use. Expect some features that still requires development/bug fixing.** See the [Roadmap](#roadmap) section.
 
 Vue Storefront is a extremly fast and customizable frontend framework for eCommerce. Based on Vue.js, leverages the Headless architecture approach. With Vue Storefront You could build the stunning UI interfaces, increase the Conversion Rates, improve the UX. **Now it's available for Shopware 6!**. 
 
