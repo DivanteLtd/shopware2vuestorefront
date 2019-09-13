@@ -18,7 +18,7 @@ By having it they will be able to work on the exactly same data formats with any
 
 Vue Storefront 1.0 architecture won't let us fully integrate - therefore this leapfrog is a required development step. There will be no easy way to migrate from `shopware2vuestorefront` to `shopware-pwa` as the data formats will change.
 
-### Can I still use `shopware2vuestorefront` (https://github.com/DivanteLtd/shopware2vuestorefront) for my commercial project?
+### Can I still use [`shopware2vuestorefront`](https://github.com/DivanteLtd/shopware2vuestorefront) for my commercial project?
 
 Yes you can, however, this integration is limited in features; we're not yet supporting the coolest Shopware6 feature which is "Customer Experiences" (Pagebuilder) -> see the [ToDo List](https://github.com/DivanteLtd/shopware2vuestorefront#what-makes-it-unique).
 
