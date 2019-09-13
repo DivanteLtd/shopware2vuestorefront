@@ -51,7 +51,7 @@ The To-Do list includes:
 
 Based on the success of `shopware2vuestorefront` integration Shopware and Divante are working together on the next version of enhanced, native and dedicated PWA for Shopware. It will be Open Source (MIT) and will be released in **Q2 2020**.
 
-This project is no longer actively supported by Vue Storefront. It **will remain available open source** for the foreseeable future however we recommend using the official Shopware PWA, powered by Vue Storefront, which is currently being build. More information can be found on [FAQ](FAQ.md).
+This project is no longer actively supported by Vue Storefront. It **will remain available open source**, however we recommend using the official Shopware PWA, powered by Vue Storefront, which is currently being build. More information can be found on [FAQ](FAQ.md).
 
 ## Contributors
 
