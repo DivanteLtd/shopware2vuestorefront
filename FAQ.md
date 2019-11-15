@@ -24,9 +24,9 @@ Yes you can, however, this integration is limited in features; we're not yet sup
 
 These features can be added by your agency if the project dates require you to start right away. If the client can wait - it's better to wait for more advanced integration that we're currently building
 
-### How it relates to Vue Storefront 2.0?
+### How it relates to Vue Storefront Roadmap?
 
-The `shopware2vuestorefont` project is dedicated to Vue Storefront 1.11. Vue Storefront 1.x will be covered by Long Term Support by 1-2 years. The  `shopware-pwa` is being built on Vue Storefront 2.0. More than using just the native data formats it will be based on StorefrontUI (http://storefrontui.io) implementing the best of Google Retail playbook strategies. It's worth waiting for it!
+The `shopware2vuestorefont` project is dedicated to Vue Storefront 1.11. Vue Storefront 1.x will be covered by Long Term Support by 1-2 years. The  `shopware-pwa` is being built on Vue Storefront Next architecture. More than using just the native data formats it will be based on StorefrontUI (http://storefrontui.io) implementing the best of Google Retail playbook strategies. It's worth waiting for it!
 
 ### Will the `shopware2vuestorefront` be actively maintained/developed?
 We're now fully focused on `shopware-pwa`, looking forward to finding community-based maintainers taking care of `shopware2vuestorefront`, however, it's hard for us to say.
