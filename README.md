@@ -1,4 +1,4 @@
-# Vue Storefront for Shopware 6
+# Vue Storefront for Neto
 <a href="https://travis-ci.org/DivanteLtd/vue-storefront"><img src="https://travis-ci.org/DivanteLtd/vue-storefront.svg?branch=master" alt="build:passed"></a>
 ![version](https://img.shields.io/badge/node-v8.x-blue.svg)
 ![Branch stable](https://img.shields.io/badge/stable%20branch-master-blue.svg)
@@ -7,9 +7,9 @@
 
 **This project is on the early stages of development. However it's probably OK for some limited production use. Expect some features that still requires development/bug fixing.** See the [Roadmap](#roadmap) section.
 
-Vue Storefront is a extremly fast and customizable frontend framework for eCommerce. Based on Vue.js, leverages the Headless architecture approach. With Vue Storefront You could build the stunning UI interfaces, increase the Conversion Rates, improve the UX. **Now it's available for Shopware 6!**. 
+Vue Storefront is a extremly fast and customizable frontend framework for eCommerce. Based on Vue.js, leverages the Headless architecture approach. With Vue Storefront You could build the stunning UI interfaces, increase the Conversion Rates, improve the UX. **Now it's available for Neto!**. 
 
-**Make the eCommerce development Fun Again**. It's easy to do with Shopware 6 + Vue Storefront :-)
+**Make the eCommerce development Fun Again**. It's easy to do with Neto + Vue Storefront :-)
 
 Made with ❤️ by [Vue Storefront](https://github.com/DivanteLtd/vue-storefront) team.
 
@@ -17,9 +17,9 @@ Made with ❤️ by [Vue Storefront](https://github.com/DivanteLtd/vue-storefron
 
 # What makes it unique?
 
-This projects bring You the [Shopware 6](https://www.shopware.com) support as a backend platform for [Vue Storefront - first Progressive Web App for e-Commerce](https://vuestorefront.io).
+This projects bring You the [Neto](https://www.shopware.com) support as a backend platform for [Vue Storefront - first Progressive Web App for e-Commerce](https://vuestorefront.io).
 
-Vue Storefront is a standalone PWA storefront for your eCommerce. It leverages the **Headless Architecture** and lets You make the most of the modern Shopware 6 Storefront API. 
+Vue Storefront is a standalone PWA storefront for your eCommerce. It leverages the **Headless Architecture** and lets You make the most of the modern Neto Storefront API. 
 
 **Here are the key characteristics of Vue Storefront for Shopware:**
 
@@ -73,7 +73,7 @@ Read the [contributing guide](./CONTRIBUTING.md) and start by creating Your firs
         </a>
       </td>
       <td align="left" valign="top">
-        Try out our open demo and if you like it <strong>first give us some star on Github ★</strong> and then contact us on <a href="https://slack.vuestorefront.io">Slack</a> or via contributors@vuestorefront.io. <br /><br /> This demo site is connected to <a href="http://shopware.vuestorefront.io">Shopware 6</a> with shopping carts and users synchronization so You can make an order (which unfortunatelly won't be shipped ;P). <br /><br />If You like to learn more or contribute please <a href="https://vuestorefront.io">do contact us</a>.
+        Try out our open demo and if you like it <strong>first give us some star on Github ★</strong> and then contact us on <a href="https://slack.vuestorefront.io">Slack</a> or via contributors@vuestorefront.io. <br /><br /> This demo site is connected to <a href="http://shopware.vuestorefront.io">Neto</a> with shopping carts and users synchronization so You can make an order (which unfortunatelly won't be shipped ;P). <br /><br />If You like to learn more or contribute please <a href="https://vuestorefront.io">do contact us</a>.
       </td>
     </tr>
   </tbody>
@@ -81,7 +81,7 @@ Read the [contributing guide](./CONTRIBUTING.md) and start by creating Your firs
 
 # How to try it?
 
-Feel free to check out. In order to have the Shopware 6 PWA up and running on Your local host You need to install the Vue Storefront first.
+Feel free to check out. In order to have the Neto PWA up and running on Your local host You need to install the Vue Storefront first.
 
 ## Install Vue Storefront
 Please do install the [Vue Storefront](https://docs.vuestorefront.io/guide/installation/linux-mac.html#requirements) using the official Installer. Make Sure that Vue Storefront is running with the default demo database on `http://localhost:3000`
@@ -97,7 +97,7 @@ yarn installer
 Vue Storefornt integration always requires two steps.
 
 ### First - Integrate the Dynamic Requests calls
-... requests like user login, shopping cart synchronization must find out the way to Your Shopware 6 backend. Vue Storefront API is in charge of sending these requests and all You need is to setup the Shopware connector in it.
+... requests like user login, shopping cart synchronization must find out the way to Your Neto backend. Vue Storefront API is in charge of sending these requests and all You need is to setup the Shopware connector in it.
 
 Download a [*.zip with the content of this](https://github.com/DivanteLtd/shopware2vuestorefront/archive/master.zip) repository (`vsf-api-extension` and `vsf-shopware-indexer`) and unpack the folders in the same parent directory Your `vue-storefront` and `vue-storefront-api` folders are located.
 
@@ -115,7 +115,7 @@ cp vsf-api-extension/* vue-storefront-api/src/platform/shopware/
 ```
 
 Change the `vue-storefront-api/config/local.json` setting the `platform` to `shopware`.
-In the end - set the `Shopware 6` API credentials in the `vue-storefront-api/config/local.json`.
+In the end - set the `Neto` API credentials in the `vue-storefront-api/config/local.json`.
 
 Example shopware credentials inside `vue-storefront-api/config/local.json`
 ```json
