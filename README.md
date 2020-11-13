@@ -1,4 +1,8 @@
 # Vue Storefront for Shopware 6
+
+## :information_source: Try the native solution first -> visit the [official shopware-pwa repository](https://github.com/DivanteLtd/shopware-pwa) :blue_heart:
+
+---
 <a href="https://travis-ci.org/DivanteLtd/vue-storefront"><img src="https://travis-ci.org/DivanteLtd/vue-storefront.svg?branch=master" alt="build:passed"></a>
 ![version](https://img.shields.io/badge/node-v8.x-blue.svg)
 ![Branch stable](https://img.shields.io/badge/stable%20branch-master-blue.svg)
